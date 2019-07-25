@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "8"
+
+install: 
+  - npm install yarn -g
+  - yarn
+  - yarn run demo
+
+deploy:
+  provider: releases
+  api_key: "GITHUB OAUTH TOKEN"
+  file: "FILE TO UPLOAD"
+  skip_cleanup: true
+  on:
+    tags: true

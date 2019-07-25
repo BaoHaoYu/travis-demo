@@ -1,0 +1,16 @@
+{
+  "name": "travis-demo",
+  "version": "0.0.1",
+  "description": "travis demo",
+  "devDependencies": {
+    "@types/fs-extra": "^8.0.0",
+    "@types/lodash": "^4.14.136",
+    "fs-extra": "^8.1.0"
+  },
+  "dependencies": {
+    "loadsh": "^0.0.4"
+  },
+  "scripts": {
+    "demo": "node src/index.js"
+  }
+}
