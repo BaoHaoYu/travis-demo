@@ -10,10 +10,11 @@ install:
   - npm install yarn -g
   - yarn
   - yarn run demo
-  - git add --all
-  - git commit -m "Commit Message" -a
 
-script: true
+script: 
+  - git add --all
+  - git commit -m "Commit Message from travis" -a
+  - git push
 
 deploy:
   provider: releases
