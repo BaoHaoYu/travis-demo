@@ -14,7 +14,7 @@ install:
 script: 
   - git add --all
   - git commit -m "Commit Message from travis" -a
-  - git push
+  - git push --all
 
 deploy:
   provider: releases
