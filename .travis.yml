@@ -10,6 +10,7 @@ install:
   - npm install yarn -g
   - yarn
   - yarn run demo
+  - git checkout -f master
   - git commit -m "Commit Message" -a
 
 script: true
