@@ -11,7 +11,7 @@ script: true
 
 deploy:
   provider: releases
-  api_key: ${GITHUB_TOKEN}
+  api_key: "jF7Qh4h3E8vBHYwX7CsEjg"
   file: "./src"
   skip_cleanup: true
   on:
