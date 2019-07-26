@@ -12,7 +12,8 @@ script: true
 deploy:
   provider: releases
   api_key: ${GITHUB_TOKEN}
-  file: "./src"
+  file_glob: true
+  file: "./src/**"
   skip_cleanup: true
   on:
     tags: true
