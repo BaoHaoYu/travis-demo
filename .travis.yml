@@ -7,11 +7,12 @@ install:
   - yarn
   - yarn run demo
 
-script: true
+script: 
+  - travis setup releases --pro
 
 deploy:
   provider: releases
-  api_key: "jF7Qh4h3E8vBHYwX7CsEjg"
+  api_key: ${GITHUB_TOKEN}
   file: "./src"
   skip_cleanup: true
   on:
