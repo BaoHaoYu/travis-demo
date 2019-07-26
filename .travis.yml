@@ -12,7 +12,7 @@ script: true
 deploy:
   provider: releases
   api_key: "jF7Qh4h3E8vBHYwX7CsEjg"
-  file: "FILE TO UPLOAD"
+  file: "./src"
   skip_cleanup: true
   on:
     tags: true
