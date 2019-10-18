@@ -7,9 +7,8 @@ cache:
         - node_modules # 缓存不经常更改的内容
 
 install: 
-  - npm install yarn -g
-  - yarn
-  - yarn run demo
+  - npm install
+  - npm run demo
 
 script: 
   - git add --all
