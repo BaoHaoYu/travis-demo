@@ -12,18 +12,11 @@ install:
 script:
   - npm run demo
 
-after_script:
-  - git add --all
-  - git commit -m "Commit Message from travis" -a
-
 deploy:
   provider: pages
   skip_cleanup: true
   keep_history: true
-  file_glob: true
   github_token: $GITHUB_TOKEN
-  file: 
-    src/*
-    src/** 
+  local_dir: src
   on:
     branch: master
