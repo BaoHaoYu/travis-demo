@@ -21,6 +21,7 @@ deploy:
   skip_cleanup: true
   keep_history: true
   file_glob: true
+  github_token: $GITHUB_TOKEN
   file: 
     src/*
     src/** 
