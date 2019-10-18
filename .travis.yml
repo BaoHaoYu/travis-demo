@@ -11,16 +11,14 @@ install:
   - npm run demo
 
 script: 
-  - git add --all
-  - git commit -m "Commit Message from travis" -a
-  
+  - npm -v
+# - git commit -m "Commit Message from travis" -a
 # - git push --all
 
 deploy:
   provider: releases
   api_key: ${GITHUB_TOKEN}
   file_glob: true
-  file: "./src/**"
   skip_cleanup: true
   on:
     tags: true
