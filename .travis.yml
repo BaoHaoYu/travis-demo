@@ -11,6 +11,8 @@ install:
 
 script:
   - npm run demo
+  - git add --all
+  - git commit -m "Commit Message from travis" -a
 
 deploy:
   provider: releases
