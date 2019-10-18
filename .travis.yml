@@ -11,13 +11,24 @@ install:
   - npm run demo
 
 script: 
-  - npm -v
+  - git add --all
+  - git commit -m "Commit Message from travis" -a
+  
+# - git push --all
+
+# deploy:
+#   provider: releases
+#   api_key: ${GITHUB_TOKEN}
+#   file_glob: true
+#   file: "./src/**"
+#   skip_cleanup: true
+#   on:
+#     tags: true
+#     branch: master
 
 deploy:
-  provider: releases
-  api_key: ${GITHUB_TOKEN}
-  file_glob: true
-  file: "./src/**"
+  provider: pages
   skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
   on:
-    tags: true
+    branch: master
