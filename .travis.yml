@@ -11,11 +11,15 @@ install:
 
 script:
   - npm run demo
+
+after_script:
   - git add --all
   - git commit -m "Commit Message from travis" -a
 
 deploy:
-  provider: releases
-  api_key: ${GITHUB_TOKEN}
+  provider: pages
   skip_cleanup: true
-  draft: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: master
