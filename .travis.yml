@@ -11,12 +11,13 @@ install:
 
 script:
   - yarn run demo
+  - yarn run build-sprites
 
 deploy:
   provider: pages
   skip_cleanup: true
   keep_history: true
   github_token: $GITHUB_TOKEN
-  local_dir: src
+  local_dir: public
   on:
     branch: master
