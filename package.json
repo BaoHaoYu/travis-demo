@@ -8,11 +8,30 @@
     "fs-extra": "^8.1.0"
   },
   "dependencies": {
+    "prettier": "^1.18.2",
     "@types/shelljs": "^0.8.5",
     "loadsh": "^0.0.4",
-    "shelljs": "^0.8.3"
+    "shelljs": "^0.8.3",
+    "ts-node": "^8.4.1",
+    "tsconfig-paths": "^3.9.0",
+    "tslint": "^5.20.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.6.4"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "printWidth": 80,
+    "semi": false,
+    "arrowParens": "always",
+    "useTabs": false,
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "tabWidth": 2,
+    "singleQuote": true
   },
   "scripts": {
-    "demo": "node src/index.js"
+    "demo": "ts-node src/index.ts"
   }
 }
