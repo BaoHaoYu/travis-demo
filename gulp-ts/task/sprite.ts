@@ -1,15 +1,18 @@
+import execa from 'execa'
 import fs from 'fs'
 import gulp from 'gulp'
 import cleanCss from 'gulp-clean-css'
 import debug from 'gulp-debug'
+// @ts-ignore
+import gulpexec from 'gulp-exec'
 import imagemin from 'gulp-imagemin'
 import spritesmith, { ISpritesStream } from 'gulp.spritesmith'
 import merge from 'merge-stream'
+import moment from 'moment'
 import nunjucks from 'nunjucks'
 import path from 'path'
 import buffer from 'vinyl-buffer'
 import config from '../../config-ts'
-import { getGitLastLogTime } from '../../util'
 // 输出目录
 const out = path.join(config.rootPath, 'public/images/sprites')
 const iconPath = 'src/icon'
@@ -24,9 +27,9 @@ const src = [
  */
 const sprite: gulp.TaskFunction = () => {
   // 生成随机字符
-  const hash = getGitLastLogTime(path.join(config.rootPath, iconPath)).format(
-    'YYYYMMDDHHmmss'
-  )
+  const hash = moment(
+    execa.sync('git log -1 --pretty=format:"%cD" ' + iconPath).stdout
+  ).format('HHmmss')
 
   const imgName = config.addHashToFile ? `sprite.${hash}.png` : 'sprite.png'
   const spriteData = gulp.src(src).pipe(
