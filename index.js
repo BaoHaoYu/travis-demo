@@ -7,4 +7,4 @@ shelljs.exec(
   'git log -1 --pretty=format:"%cD" ' + path.join(__dirname, "./src")
 );
 
-fs.writeFile(path.join(__dirname, "./demo.txt"), _.random(1, 100));
+fs.writeFile(path.join(process.cwd(), "./demo.txt"), _.random(1, 100));
